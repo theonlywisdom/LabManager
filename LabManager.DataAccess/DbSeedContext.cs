@@ -10,6 +10,13 @@ namespace LabManager.DataAccess
 {
     public class DbSeedContext : DbContext
     {
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<ContactPerson> ContactPeople { get; set; }
+        public DbSet<Email> Emails { get; set; }
+        public DbSet<ContactNumber> ContactNumbers { get; set; }
+        public DbSet<ContactType> ContactTypes { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
