@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LabManager.Model
+namespace LabManager.UI.Data.Lookups
 {
     public class ClientLookUpItem
     {
