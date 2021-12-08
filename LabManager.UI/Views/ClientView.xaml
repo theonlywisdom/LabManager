@@ -20,7 +20,10 @@
             </Grid.ColumnDefinitions>
 
             <view:NavigationView DataContext="{Binding NavigationViewModel}"/>
-            <view:ClientCollectionView DataContext="{Binding ClientCollectionViewModel}" Grid.Column="1"/>
+            <Grid Grid.Column="1">
+                <ContentControl Content="{Binding .CurrentViewModel}"/>
+            </Grid>
+            <!--<view:ClientCollectionView DataContext="{Binding ClientCollectionViewModel}" Grid.Column="1"/>-->
         </Grid>
     </Grid>
 </UserControl>

@@ -1,4 +1,6 @@
-﻿using LabManager.UI.Events;
+﻿using Autofac.Features.Indexed;
+using LabManager.UI.Events;
+using LabManager.UI.State;
 using Prism.Events;
 using System;
 using System.Collections.Generic;
@@ -12,16 +14,23 @@ namespace LabManager.UI.ViewModels
     {
         private IEventAggregator _eventAggregator;
 
-        public ClientViewModel(IEventAggregator eventAggregator)
+        private INavigator Navigator { get; set; }
+
+        private IIndex<string, ViewModelBase> _viewModelCreator;
+
+        public ClientViewModel(IEventAggregator eventAggregator,
+            INavigator navigator, IIndex<string,ViewModelBase> viewModelCreator)
         {
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<OpenViewEvent>()
                 .Subscribe(OnOpenView);
+            Navigator = navigator;
+            _viewModelCreator = viewModelCreator;
         }
 
         private void OnOpenView(OpenViewEventArgs args)
         {
-            throw new NotImplementedException();
+            Navigator.CurrentViewModel = _viewModelCreator[args.ViewModelName];
         }
     }
 }
