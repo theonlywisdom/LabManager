@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabManager.UI", "LabManager
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabManager.Model", "LabManager.Model\LabManager.Model.csproj", "{442FBCB4-5297-4B0D-B626-F7B3AFEF6807}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabManager.DataAccess", "LabManager.DataAccess\LabManager.DataAccess.csproj", "{7E111A9D-4055-4A40-AED7-3239C3580EDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,18 @@ Global
 		{442FBCB4-5297-4B0D-B626-F7B3AFEF6807}.Release|x64.Build.0 = Release|Any CPU
 		{442FBCB4-5297-4B0D-B626-F7B3AFEF6807}.Release|x86.ActiveCfg = Release|Any CPU
 		{442FBCB4-5297-4B0D-B626-F7B3AFEF6807}.Release|x86.Build.0 = Release|Any CPU
+		{7E111A9D-4055-4A40-AED7-3239C3580EDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E111A9D-4055-4A40-AED7-3239C3580EDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E111A9D-4055-4A40-AED7-3239C3580EDA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7E111A9D-4055-4A40-AED7-3239C3580EDA}.Debug|x64.Build.0 = Debug|Any CPU
+		{7E111A9D-4055-4A40-AED7-3239C3580EDA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7E111A9D-4055-4A40-AED7-3239C3580EDA}.Debug|x86.Build.0 = Debug|Any CPU
+		{7E111A9D-4055-4A40-AED7-3239C3580EDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E111A9D-4055-4A40-AED7-3239C3580EDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E111A9D-4055-4A40-AED7-3239C3580EDA}.Release|x64.ActiveCfg = Release|Any CPU
+		{7E111A9D-4055-4A40-AED7-3239C3580EDA}.Release|x64.Build.0 = Release|Any CPU
+		{7E111A9D-4055-4A40-AED7-3239C3580EDA}.Release|x86.ActiveCfg = Release|Any CPU
+		{7E111A9D-4055-4A40-AED7-3239C3580EDA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
