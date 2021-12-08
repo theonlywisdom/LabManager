@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LabManager.DataAccess\LabManager.DataAccess.csproj" />
     <ProjectReference Include="..\LabManager.Model\LabManager.Model.csproj" />
   </ItemGroup>
 
