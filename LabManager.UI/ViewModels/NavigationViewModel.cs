@@ -2,15 +2,11 @@
 using Prism.Commands;
 using Prism.Events;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace LabManager.UI.ViewModels
 {
-    public class NavigationViewModel : ViewModelBase
+    public class NavigationViewModel : ViewModelBase, INavigationViewModel
     {
         private IEventAggregator _eventAggregator;
 
@@ -32,5 +28,10 @@ namespace LabManager.UI.ViewModels
                 }
                 );
         }
+    }
+
+    public interface INavigationViewModel
+    {
+
     }
 }

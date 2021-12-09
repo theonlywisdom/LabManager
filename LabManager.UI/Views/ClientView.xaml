@@ -7,6 +7,11 @@
              xmlns:view="clr-namespace:LabManager.UI.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type viewModel:ClientCollectionViewModel}">
+            <view:ClientCollectionView/>
+        </DataTemplate>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -19,11 +24,17 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <view:NavigationView DataContext="{Binding NavigationViewModel}"/>
+            <ContentControl Content="{Binding NavigationViewModel}">
+                <ContentControl.Resources>
+                    <DataTemplate DataType="{x:Type viewModel:NavigationViewModel}">
+                        <view:NavigationView/>
+                    </DataTemplate>
+                </ContentControl.Resources>
+            </ContentControl>
+            
             <Grid Grid.Column="1">
                 <ContentControl Content="{Binding Navigator.CurrentViewModel}"/>
             </Grid>
-            <!--<view:ClientCollectionView DataContext="{Binding ClientCollectionViewModel}" Grid.Column="1"/>-->
         </Grid>
     </Grid>
 </UserControl>

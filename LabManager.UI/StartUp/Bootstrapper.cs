@@ -2,11 +2,6 @@
 using LabManager.UI.State;
 using LabManager.UI.ViewModels;
 using Prism.Events;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LabManager.UI.StartUp
 {
@@ -22,6 +17,7 @@ namespace LabManager.UI.StartUp
             builder.RegisterType<EventAggregator>().As<IEventAggregator>().SingleInstance();
             builder.RegisterType<Navigator>().As<INavigator>();
             builder.RegisterType<ClientViewModel>().As<ViewModelBase>();
+            builder.RegisterType<NavigationViewModel>().As<INavigationViewModel>();
 
 
             builder.RegisterType<MainViewModel>().AsSelf();
