@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using LabManager.DataAccess;
 using LabManager.UI.Data.Lookups;
+using LabManager.UI.Data.Repositories;
 using LabManager.UI.State;
 using LabManager.UI.ViewModels;
 using Prism.Events;
@@ -15,12 +16,15 @@ namespace LabManager.UI.StartUp
 
             builder.RegisterType<ClientCollectionViewModel>()
                 .Keyed<ViewModelBase>(nameof(ClientCollectionViewModel));
+            builder.RegisterType<ClientDetailViewModel>()
+                .Keyed<ViewModelBase>(nameof(ClientDetailViewModel));
 
             builder.RegisterType<EventAggregator>().As<IEventAggregator>().SingleInstance();
             builder.RegisterType<Navigator>().As<INavigator>();
             builder.RegisterType<ClientViewModel>().As<ViewModelBase>();
             builder.RegisterType<NavigationViewModel>().As<INavigationViewModel>();
             builder.RegisterType<ClientLookupService>().As<IClientLookupService>();
+            builder.RegisterType<ClientRepository>().As<IClientRepository>();
 
 
             builder.RegisterType<MainViewModel>().AsSelf();
