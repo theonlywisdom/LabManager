@@ -27,10 +27,11 @@ namespace LabManager.UI.ViewModels
             NavigationViewModel = navigationViewModel;
         }
 
-        private void OnOpenDetailView(OpenDetailViewEventArgs args)
+        private async void OnOpenDetailView(OpenDetailViewEventArgs args)
         {
             Navigator.CurrentViewModel = _viewModelCreator[args.ViewModelName];
-
+            var detailVm = Navigator.CurrentViewModel as ClientDetailViewModel;
+            await detailVm.LoadAsync(args.Id);
         }
 
         public INavigationViewModel NavigationViewModel { get; private set; }
