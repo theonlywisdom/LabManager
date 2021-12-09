@@ -12,7 +12,7 @@ namespace LabManager.UI.State
         public ViewModelBase CurrentViewModel { get; set; }
     }
 
-    public class Navigator : ObservableObject
+    public class Navigator : ObservableObject, INavigator
     {
         private ViewModelBase _currentViewModel;
 

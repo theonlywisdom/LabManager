@@ -13,6 +13,6 @@
         </DataTemplate>
     </Window.Resources>
     <Grid>
-        <view:ClientView/>
+        <ContentControl Content="{Binding Navigator.CurrentViewModel}"/>
     </Grid>
 </Window>

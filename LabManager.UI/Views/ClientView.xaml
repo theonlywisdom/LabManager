@@ -21,7 +21,7 @@
 
             <view:NavigationView DataContext="{Binding NavigationViewModel}"/>
             <Grid Grid.Column="1">
-                <ContentControl Content="{Binding .CurrentViewModel}"/>
+                <ContentControl Content="{Binding Navigator.CurrentViewModel}"/>
             </Grid>
             <!--<view:ClientCollectionView DataContext="{Binding ClientCollectionViewModel}" Grid.Column="1"/>-->
         </Grid>

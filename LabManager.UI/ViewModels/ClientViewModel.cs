@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LabManager.UI.ViewModels
 {
-    public class ClientViewModel
+    public class ClientViewModel : ViewModelBase
     {
         private IEventAggregator _eventAggregator;
 
