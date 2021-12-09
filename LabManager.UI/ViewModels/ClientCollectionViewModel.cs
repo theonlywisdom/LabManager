@@ -11,6 +11,7 @@ namespace LabManager.UI.ViewModels
         public ClientCollectionViewModel(IClientLookupService clientLookupService)
         {
             _clientLookupService = clientLookupService;
+            Clients = new ObservableCollection<ClientCollectionItemViewModel>();
         }
 
         public async Task LoadAsync()

@@ -26,9 +26,11 @@ namespace LabManager.UI.ViewModels
 
         public INavigationViewModel NavigationViewModel { get; private set; }
 
-        private void OnOpenView(OpenViewEventArgs args)
+        private async void OnOpenView(OpenViewEventArgs args)
         {
             Navigator.CurrentViewModel = _viewModelCreator[args.ViewModelName];
+            var collectionVM = Navigator.CurrentViewModel as ClientCollectionViewModel;
+            await collectionVM.LoadAsync();
         }
     }
 }

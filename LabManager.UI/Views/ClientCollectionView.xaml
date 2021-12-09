@@ -7,6 +7,30 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <DataGrid AutoGenerateColumns="False" HorizontalAlignment="Right"/>
+        <Grid>
+            <DataGrid AutoGenerateColumns="False" HorizontalAlignment="Right"
+            ItemsSource="{Binding Clients}" IsReadOnly="True"
+            IsSynchronizedWithCurrentItem="True" CanUserResizeRows="False"
+            CanUserResizeColumns="False" HeadersVisibility="Column"
+            GridLinesVisibility="None" AlternatingRowBackground="Gainsboro">
+                <DataGrid.InputBindings>
+                    <MouseBinding
+                    MouseAction="LeftDoubleClick"
+                    Command="{Binding Clients/OpenDetailViewCommand}"
+                        />
+
+                </DataGrid.InputBindings>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Code}" Header="Code"/>
+                    <DataGridTextColumn Binding="{Binding Name}" Header="Name"/>
+                    <DataGridTextColumn Binding="{Binding Address}" Header="Address"/>
+                    <DataGridTextColumn Binding="{Binding Postcode}" Header="Postcode"/>
+                    <DataGridTextColumn Binding="{Binding Person}" Header="Person"/>
+                    <DataGridTextColumn Binding="{Binding JobTitle}" Header="Job Title"/>
+                    <DataGridTextColumn Binding="{Binding Phone}" Header="Phone"/>
+                    <DataGridTextColumn Binding="{Binding Email}" Header="Email"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
     </Grid>
 </UserControl>
