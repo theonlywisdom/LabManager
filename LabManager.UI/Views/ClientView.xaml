@@ -11,6 +11,9 @@
         <DataTemplate DataType="{x:Type viewModel:ClientCollectionViewModel}">
             <view:ClientCollectionView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:ClientDetailViewModel}">
+            <view:ClientDetailView/>
+        </DataTemplate>
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>

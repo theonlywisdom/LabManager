@@ -1,4 +1,5 @@
-﻿using LabManager.UI.Data.Repositories;
+﻿using LabManager.Model;
+using LabManager.UI.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +21,22 @@ namespace LabManager.UI.ViewModels
         {
             if (clientId.HasValue)
             {
-                await _clientRepository.GetByIdAsync(clientId.Value);
+               Client = await _clientRepository.GetByIdAsync(clientId.Value);
             }
         }
+
+        private Client _client;
+
+        public Client Client
+        {
+            get => _client;
+            set
+            {
+                _client = value;
+                OnPropertyChanged();
+            }
+        }
+
     }
 
     public interface IClientDetailViewModel : IDetailViewModel
