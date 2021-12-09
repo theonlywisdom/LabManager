@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using LabManager.UI.State;
 using LabManager.UI.ViewModels;
 using Prism.Events;
 using System;
@@ -19,9 +20,12 @@ namespace LabManager.UI.StartUp
                 .Keyed<ViewModelBase>(nameof(ClientCollectionViewModel));
 
             builder.RegisterType<EventAggregator>().As<IEventAggregator>().SingleInstance();
+            builder.RegisterType<Navigator>().As<INavigator>();
+            builder.RegisterType<ClientViewModel>().As<ViewModelBase>();
 
 
             builder.RegisterType<MainViewModel>().AsSelf();
+            builder.RegisterType<MainWindow>().AsSelf();
 
             return builder.Build();
         }
