@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
-namespace ExpressMicroScienceLIMS.UI.Data.Lookups
+namespace LabManager.UI.Data.Lookups
 {
     public class ClientLookupService : IClientLookupService
     {
