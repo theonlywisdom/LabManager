@@ -2,6 +2,7 @@
 using LabManager.UI.Events;
 using LabManager.UI.State;
 using Prism.Events;
+using System;
 
 namespace LabManager.UI.ViewModels
 {
@@ -19,9 +20,17 @@ namespace LabManager.UI.ViewModels
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<OpenViewEvent>()
                 .Subscribe(OnOpenView);
+            _eventAggregator.GetEvent<OpenDetailViewEvent>()
+                .Subscribe(OnOpenDetailView);
             Navigator = navigator;
             _viewModelCreator = viewModelCreator;
             NavigationViewModel = navigationViewModel;
+        }
+
+        private void OnOpenDetailView(OpenDetailViewEventArgs args)
+        {
+            Navigator.CurrentViewModel = _viewModelCreator[args.ViewModelName];
+
         }
 
         public INavigationViewModel NavigationViewModel { get; private set; }
