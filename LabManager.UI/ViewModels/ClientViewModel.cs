@@ -2,11 +2,6 @@
 using LabManager.UI.Events;
 using LabManager.UI.State;
 using Prism.Events;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LabManager.UI.ViewModels
 {
@@ -14,19 +9,22 @@ namespace LabManager.UI.ViewModels
     {
         private IEventAggregator _eventAggregator;
 
-        private INavigator Navigator { get; set; }
-
         private IIndex<string, ViewModelBase> _viewModelCreator;
 
+        public INavigator Navigator { get; set; }
+
         public ClientViewModel(IEventAggregator eventAggregator,
-            INavigator navigator, IIndex<string,ViewModelBase> viewModelCreator)
+            INavigator navigator, IIndex<string, ViewModelBase> viewModelCreator, INavigationViewModel navigationViewModel)
         {
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<OpenViewEvent>()
                 .Subscribe(OnOpenView);
             Navigator = navigator;
             _viewModelCreator = viewModelCreator;
+            NavigationViewModel = navigationViewModel;
         }
+
+        public INavigationViewModel NavigationViewModel { get; private set; }
 
         private void OnOpenView(OpenViewEventArgs args)
         {
