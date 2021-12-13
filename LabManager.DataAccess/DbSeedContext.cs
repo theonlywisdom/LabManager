@@ -16,6 +16,8 @@ namespace LabManager.DataAccess
         public DbSet<Email> Emails { get; set; }
         public DbSet<ContactNumber> ContactNumbers { get; set; }
         public DbSet<ContactType> ContactTypes { get; set; }
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
