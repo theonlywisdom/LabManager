@@ -25,6 +25,7 @@ namespace LabManager.UI.StartUp
             builder.RegisterType<EventAggregator>().As<IEventAggregator>().SingleInstance();
             builder.RegisterType<Navigator>().As<INavigator>();
             builder.RegisterType<ClientViewModel>().As<ViewModelBase>();
+            builder.RegisterType<LoginViewModel>().As<LoginViewModelBase>();
             builder.RegisterType<NavigationViewModel>().As<INavigationViewModel>();
             builder.RegisterType<ClientLookupService>().As<IClientLookupService>();
             builder.RegisterType<ClientRepository>().As<IClientRepository>();
