@@ -1,5 +1,6 @@
 ﻿using LabManager.Model;
 using LabManager.UI.Data.Repositories;
+using LabManager.UI.Exceptions;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Threading.Tasks;
@@ -26,8 +27,10 @@ namespace LabManager.UI.Services
 
             if (passwordResult != PasswordVerificationResult.Success)
             {
-                
+                throw new InvalidPasswordException(username, password);
             }
+
+            return storedAccount;
         }
 
         public async Task<RegistrationResult> Register(string email, string username, string password, string confirmPassword)

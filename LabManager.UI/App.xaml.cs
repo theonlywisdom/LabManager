@@ -1,7 +1,7 @@
 ﻿using LabManager.UI.StartUp;
 using System.Windows;
 using Autofac;
-
+using LabManager.UI.Services;
 
 namespace LabManager.UI
 {

@@ -2,8 +2,11 @@
 using LabManager.DataAccess;
 using LabManager.UI.Data.Lookups;
 using LabManager.UI.Data.Repositories;
+using LabManager.UI.Services;
 using LabManager.UI.State;
+using LabManager.UI.State.Authenticators;
 using LabManager.UI.ViewModels;
+using Microsoft.AspNet.Identity;
 using Prism.Events;
 
 namespace LabManager.UI.StartUp
@@ -25,6 +28,10 @@ namespace LabManager.UI.StartUp
             builder.RegisterType<NavigationViewModel>().As<INavigationViewModel>();
             builder.RegisterType<ClientLookupService>().As<IClientLookupService>();
             builder.RegisterType<ClientRepository>().As<IClientRepository>();
+            builder.RegisterType<AuthenticationService>().As<IAuthenticationService>();
+            builder.RegisterType<AccountRepository>().As<IAccountRepository>();
+            builder.RegisterType<PasswordHasher>().As<IPasswordHasher>();
+            builder.RegisterType<Authenticator>().As<IAuthenticator>();
 
 
             builder.RegisterType<MainViewModel>().AsSelf();
