@@ -12,7 +12,7 @@
             <view:ClientView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
-            <view:LoginView/>
+            <view:LoginView LoginCommand="{Binding LoginCommand}"/>
         </DataTemplate>
     </Window.Resources>
     <Grid>

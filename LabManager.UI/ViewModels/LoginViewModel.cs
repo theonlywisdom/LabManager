@@ -1,4 +1,5 @@
-﻿using LabManager.UI.State.Authenticators;
+﻿using LabManager.UI.Events;
+using LabManager.UI.State.Authenticators;
 using Prism.Commands;
 using Prism.Events;
 using System;
@@ -8,26 +9,31 @@ namespace LabManager.UI.ViewModels
 {
     public class LoginViewModel : LoginViewModelBase
     {
-        private string _userName;
+        private string _username;
         private IEventAggregator _eventAggregator;
 
         public LoginViewModel(IEventAggregator eventAggregator)
         {
             _eventAggregator = eventAggregator;
-            LoginCommand = new DelegateCommand<IAuthenticator>(OnLoginCommandExecute);
+            LoginCommand = new DelegateCommand<string>(OnLoginCommandExecute);
         }
 
-        private void OnLoginCommandExecute(IAuthenticator obj)
+        private void OnLoginCommandExecute(string args)
         {
-            throw new NotImplementedException();
+            _eventAggregator.GetEvent<LoginAccountEvent>()
+                    .Publish(
+                new LoginAccountEventArgs
+                {
+                    UserPassword = args
+                });
         }
 
-        public string UserName
+        public string Username
         {
-            get => _userName;
+            get => _username;
             set
             {
-                _userName = value;
+                _username = value;
                 OnPropertyChanged();
             }
         }
@@ -38,6 +44,6 @@ namespace LabManager.UI.ViewModels
 
     public class LoginViewModelBase : ViewModelBase
     {
-
+        public virtual string Username { get; set; }
     }
 }

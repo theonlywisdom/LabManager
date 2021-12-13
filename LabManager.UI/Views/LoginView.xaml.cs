@@ -15,11 +15,17 @@ using System.Windows.Shapes;
 
 namespace LabManager.UI.Views
 {
-    /// <summary>
-    /// Interaction logic for LoginView.xaml
-    /// </summary>
     public partial class LoginView : UserControl
     {
+        public static readonly DependencyProperty LoginCommandProperty =
+            DependencyProperty.Register("LoginCommand", typeof(ICommand), typeof(LoginView), new PropertyMetadata(null));
+
+        public ICommand LoginCommand
+        {
+            get { return (ICommand)GetValue(LoginCommandProperty); }
+            set { SetValue(LoginCommandProperty, value); }
+        }
+
         public LoginView()
         {
             InitializeComponent();
@@ -27,7 +33,12 @@ namespace LabManager.UI.Views
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
+            if (LoginCommand is not null)
+            {
+                string password = pbPassword.Password;
 
+                LoginCommand.Execute(password);
+            }
         }
     }
 }
