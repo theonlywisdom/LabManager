@@ -17,6 +17,8 @@ namespace LabManager.UI.StartUp
         {
             var builder = new ContainerBuilder();
 
+            builder.RegisterType<ClientViewModel>()
+                .Keyed<ViewModelBase>(nameof(ClientViewModel));
             builder.RegisterType<ClientCollectionViewModel>()
                 .Keyed<ViewModelBase>(nameof(ClientCollectionViewModel));
             builder.RegisterType<ClientDetailViewModel>()
